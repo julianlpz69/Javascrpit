@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script >
+
+        let lista = [20,50,"hola",true,250,184,2,1]
+
+
+
+        // Acceder a un elemento de Array mediante su índice----------------------------------------------------------------------------------------------------
+
+            let primero =lista[0]
+            // 20
+
+            let ultimo = lista[lista.length - 1]
+            // 1
+
+        
+
+
+            
+        // El operador [] no sólo nos permite obtener o acceder a un elemento del array, sino que también nos permite modificar un elemento 
+        // específico del array, si utilizamos la asignación:-----------------------------------------------------------------------------------------------
+
+
+
+            const letters =  ["a", "b", "c"];
+
+            letters[1] = "Z";       // Devuelve "Z" y modifica letters a ["a", "Z", "c"]
+            letters[3] = "D";       // Devuelve "D" y modifica letters a ["a", "Z", "c", "D"]
+            letters[5] = "A";       // Devuelve "A" y modifica letters a ["a", "Z", "c", "D", undefined, "A"]
+
+
+
+
+        // Además del clásico operador [], también podemos utilizar el método .at(), añadido en Javascript . Con él, se puede hacer exactamente 
+        // lo mismo que con [pos], sólo que además permite valores negativos, mediante los cuales se puede obtener elementos en orden inverso, 
+        // es decir, empezando a contar desde el último elemento:----------------------------------------------------------------------------------------
+
+            const letters = ["a", "b", "c"];
+
+            letters.at(0);    // "a"
+            letters.at(1);    // "b"
+            letters.at(3);    // undefined
+            letters.at(-1);   // "c"
+            letters.at(-2);   // "b"
+
+
+
+                    
+        // VALOR MAXIMO Y MINIMO DE UN ARRAY DE NUMEROS---------------------------------------------------------------------------------------------------------------------
+
+
+        let mejorNota = Math.max(...LIST)
+        // Valor maximo de la lista
+
+        
+        let PeorNota = Math.min(...LIST)
+        // Valor minimo de la lista
+
+
+            // Recorrer un Array---------------------------------------------------------------------------------------------------------------------
+
+            let hola = lista.forEach(function(elemento, indice) {
+                alert(elemento,indice);})
+            // 20           0
+            // 50           1
+            // "hola"       2
+            // true         3
+            // 250          4
+            // 184          5
+            // 2            6
+            // 1            7
+
+
+
+            // Añadir y eliminar elementosssssss-----------------------------------------------------------------------------------------------------
+
+            const elements = ["a", "b", "c"]; // Array inicial
+
+            elements.push("d");    // Devuelve 4.   Ahora elements = ['a', 'b', 'c', 'd']
+            elements.pop();        // Devuelve 'd'. Ahora elements = ['a', 'b', 'c']
+
+            elements.unshift("Z"); // Devuelve 4.   Ahora elements = ['Z', 'a', 'b', 'c']
+            elements.shift();      // Devuelve 'Z'. Ahora elements = ['a', 'b', 'c']
+
+
+
+
+            // Añadir un elemento al final de un Array-----------------------------------------------------------------------------------------------------
+
+            let nuevaLongitud = lista.push('Naranja') // Añade "Naranja" al final
+
+            // [20,50,"hola",true,250,184,2,1,"Naranja"]
+
+
+
+            // Eliminar el último elemento de un Array--------------------------------------------------------------------------------------------------------------
+
+            let ultimo2 = lista.pop() // Elimina "Naranja" del final
+            // [20,50,"hola",true,250,184,2,1]
+
+
+
+
+            // Añadir un elemento al principio de un Array---------------------------------------------------------------------------------------------------
+
+            let nuevaLongitud2 = lista.unshift('Fresa') // Añade "Fresa" al inicio
+            // ["Fresa",20,50,"hola",true,250,184,2,1]
+
+
+
+
+            // Eliminar el primer elemento de un Array------------------------------------------------------------------------------------------------------
+
+            let primero2 = lista.shift() // Elimina "Fresa" del inicio
+            // ["Manzana",20,50,"hola",true,250,184,2,1]
+
+
+
+            // Filtrar valores con una condicon ------------------------------------------------------------------------------------------
+
+             let opc =  lista.filter(element => element > 2) 
+            //   almacena los elementos mayores a 2 en opc es un condicional
+
+
+
+            // Encontrar el índice de un elemento del Array------------------------------------------------------------------------------------------
+
+            frutas.push('Fresa')
+            // ["Manzana",20,50,"hola",true,250,184,2,1, "Fresa"]
+
+            let pos = lista.indexOf(20) // (pos) es la posición para abreviar
+            // 1
+            // let po = lista.lastIndexOf(20) bucas el indice de derecha a izquierda
+
+
+
+            // Eliminar un único elemento mediante su posición--------------------------------------------------------------------------------------------------
+            
+
+            let elementoEliminado = frutas.splice(pos, 1)
+            // ["Manzana",50,"hola",true,250,184,2,1, "Fresa"]   elimino 20
+
+            
+
+
+            // Copiar un Array---------------------------------------------------------------------------------------------------------------------------
+
+            let copiaArray = lista.slice();
+            // ["Manzana",50,"hola",true,250,184,2,1, "Fresa"]; ==> Copiado en "copiaArray"
+
+
+
+
+            // Eliminar varios elementos a partir de una posición-----------------------------------------------------------------------------------------------
+
+            // Nota:
+            // Con .splice() no solo se puede eliminar elementos del array, si no que también podemos extraerlos guardándolo en un nuevo array. 
+            // ¡Ojo! que al hacer esto estaríamos modificando el array de origen.
+
+            let vegetales = ['Repollo', 'Nabo', 'Rábano', 'Zanahoria']
+            console.log(vegetales)
+            // ["Repollo", "Nabo", "Rábano", "Zanahoria"]
+
+            let pos2 = 1, numElementos = 2
+
+            let elementosEliminados = vegetales.splice(pos, numElementos)
+            // ["Nabo", "Rábano"] ==> Lo que se ha guardado en "elementosEliminados"
+
+            console.log(vegetales)
+            // ["Repollo", "Zanahoria"] ==> Lo que actualmente tiene "vegetales"
+
+
+            
+
+
+
+
+
+        const a = [];
+        const b = [1, true, "Hola", ["A", "B", "C", [1, 2, 3]]];
+
+        console.log(a);
+        console.log(b);
+        console.log(b.length);
+        console.log(b[2]);
+        console.log(b[0]);
+        console.log(b[3]);
+        console.log(b[3][2]);
+        console.log(b[3][3][0]);
+
+        const c = Array.of("X", "Y", "Z", 9, 8, 7);
+        console.log(c);
+
+         const d = Array(100).fill(false);  //crear un array d con 100 posiciones y que se llenen con el valor false
+        console.log(d);
+
+        const e = new Array(); //forma antigua crear array
+        console.log(e);
+
+        const f = new Array(1, 2, 3, true, false); //forma antiguar crear array llenado
+        console.log(f); 
+
+        const colores = ["Rojo", "Verde", "Azul"];
+        console.log(colores);
+
+        colores.push("Negro");
+        console.log(colores);
+
+        colores.pop();
+        console.log(colores);
+
+        colores.forEach(function (el, index) {
+          console.log(`<li id="${index}">${el}</li>`);
+        }); 
+
+    </script>
+
+
+
+
+</body>
+</html>

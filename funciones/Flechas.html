@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+const saludar = () => console.log(`Hola`);
+    saludar(); 
+
+    /* const saludar = nombre => console.log(`Hola ${nombre}`);
+    saludar("Irma");
+
+    /* const sumar = function (a, b) {
+      return a + b;
+    } */
+
+      const sumar = (a, b) => a + b; // funcion sumar resumida funcion flecha
+
+     console.log(sumar(9, 9));
+
+     const funcionDeVariasLineas = () => {
+       console.log("Uno");
+       console.log("Dos");
+       console.log("Tres");
+     }
+
+     funcionDeVariasLineas();
+
+     const numeros = [1, 2, 3, 4, 5];
+
+     numeros.forEach((el, index) => console.log(`${el} esta en la posición ${index}`));
+
+  
+    /*   function Perro() {
+        console.log(this);
+      }
+
+      Perro(); */
+
+         const perro = {
+          nombre: "kenai",
+          ladrar() {             //No hacer funciones flechas dentro de objetos
+            console.log(this)
+          }
+        }
+
+        perro.ladrar();
+
+    </script>
+
+
+</body>
+</html>

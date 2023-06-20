@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        //Parametros infinitos Rest
+
+        function sumar(a, b, ...c) {
+            let resultado = a + b;
+
+            c.forEach(function (n) {
+                resultado += n
+            });
+
+            return resultado;
+            }
+
+        console.log(sumar(1, 2));
+        console.log(sumar(1, 2, 3));
+        console.log(sumar(1, 2, 3, 4));
+        console.log(sumar(1, 2, 3, 4, 5));
+        console.log(sumar(1, 2, 3, 4, 5, 6));
+        console.log(sumar(1, 2, 3, 4, 5, 6, 7));
+
+
+
+
+        //Sacar los valores de un array sin importar la cantidad OperadorSpread
+
+
+        const arr1 = [1, 2, 3, 4, 5],
+        arr2 = [6, 7, 8, 9, 0];
+
+        console.log(arr1, arr2);
+
+        const arr3 = [...arr1, ...arr2];
+        console.log(arr3);
+
+
+        const arr4 = [1, 2, 3];
+        const arr5 = [...arr1, 4, 5];
+
+        console.log(arr5); // [1, 2, 3, 4, 5]
+
+
+
+        //Sacar los valores de un objeto sin importar la cantidad OperadorSpread
+
+
+        const objeto1 = { a: 1, b: 2, c: 3 };
+        const objeto2 = { d: 4, f: 5, z: 69 };
+
+        console.log(objeto1, objeto2);
+
+        const objeto3 = {...objeto1, ...objeto2};
+        console.log(objeto3);
+
+
+        const objeto4 = { a: 10, b: 20 };
+        const objeto5 = { ...objeto4, c: 30 };
+
+        console.log(objeto5); // { a: 10, b: 20, c: 30 }
+
+
+
+        //Sacar los valores de un Mapa sin importar la cantidad OperadorSpread
+
+        const mapa1 = new Map([
+        ["clave1", "valor1"],
+        ["clave2", "valor2"]
+        ]);
+
+        const mapa2 = new Map([
+        ["clave3", "valor3"],
+        ["clave4", "valor4"]
+        ]);
+
+        const mapaUnido = new Map([...mapa1, ...mapa2]);
+
+        console.log(mapaUnido);
+        // Resultado: Map(4) { "clave1" => "valor1", "clave2" => "valor2", "clave3" => "valor3", "clave4" => "valor4" }
+
+
+        //Es importante tener en cuenta que si hay claves duplicadas en los mapas originales, 
+        //la última clave y su correspondiente valor sobrescribirán a las claves duplicadas anteriores 
+        //en el mapa unido.
+    </script>
+
+
+</body>
+</html>
