@@ -9,6 +9,7 @@
         body{
             background-color: aqua;
         }
+        
     </style>
 </head>
 <body>
@@ -17,6 +18,10 @@
     <div class="col-12 col-md-6 mb-3 justify-content-center text-center">
         <br><br><br>
         <button type="button" class="w-50 h-100 bg-white border rounded text-black fw-bold fs-2" data-bs-toggle="modal" data-bs-target="#formularioQuiz">Agregar Pregunta</button>
+        <button type="button" class="w-50 h-100 bg-white border rounded text-black fw-bold fs-2" data-bs-toggle="modal" data-bs-target="#quiz">Editar Quiz</button>
+        <button type="button" class="w-50 h-100 bg-white border rounded text-black fw-bold fs-2" data-bs-toggle="modal" data-bs-target="#realizarQuiz">Realizar Quizz</button>
+
+
     </div>
 
     <div class="modal fade" id="formularioQuiz" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -30,32 +35,32 @@
                     <form id="formularioQuiz2" class="row ">
 
                         <div class="col-12 ">
-                            <label for="exampleFormControlInput1" class="form-label fs-5 fw-bold">Pregunta</label>
-                            <input type="text" class="form-control w-75 border-0 border-bottom border-secondary border-5 mb-2" id="datoPregunta" placeholder="" required >
+                            <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Pregunta</label>
+                            <input type="text" class="form-control w-75 border-0 border-bottom border-secondary border-5 mb-5" id="datoPregunta" placeholder="" required >
                         </div>
                             
                         <div class="col-12 ">
-                            <label for="exampleFormControlInput1" class="form-label fs-5 fw-bold">Opcion A</label>
-                            <input type="text" class="form-control w-75 border-0 border-bottom border-secondary border-5 mb-2" id="datoOpcion1" placeholder="" required>
+                            <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Opcion A</label>
+                            <input type="text" class="form-control w-75 border-0 border-bottom border-secondary border-5 mb-5" id="datoOpcion1" placeholder="" required>
                         </div>
                             
                         <div class="col-12 ">
-                            <label for="exampleFormControlInput1" class="form-label fs-5 fw-bold justify-content-end">Opcion B</label>
-                            <input type="text" class="form-control w-75 border-0 border-bottom border-secondary border-5 mb-2" id="datoOpcion2" placeholder="" required>
+                            <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold justify-content-end">Opcion B</label>
+                            <input type="text" class="form-control w-75 border-0 border-bottom border-secondary border-5 mb-5" id="datoOpcion2" placeholder="" required>
                         </div>
 
                         <div class="col-12 ">
-                            <label for="exampleFormControlInput1" class="form-label fs-5 fw-bold justify-content-end">Opcion C</label>
-                            <input type="text" class="form-control w-75 border-0 border-bottom border-secondary border-5 mb-2" id="datoOpcion3" placeholder="" required>
+                            <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold justify-content-end">Opcion C</label>
+                            <input type="text" class="form-control w-75 border-0 border-bottom border-secondary border-5 mb-5" id="datoOpcion3" placeholder="" required>
                         </div>
 
                         <div class="col-12 ">
-                            <label for="exampleFormControlInput1" class="form-label fs-5 fw-bold justify-content-end">Opcion D</label>
-                            <input type="text" class="form-control w-75 border-0 border-bottom border-secondary border-5 mb-2" id="datoOpcion4" placeholder="" required>
+                            <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold justify-content-end">Opcion D</label>
+                            <input type="text" class="form-control w-75 border-0 border-bottom border-secondary border-5 mb-5" id="datoOpcion4" placeholder="" required>
                         </div>
                             
                         <div class="col-12 ">
-                        <label class="fs-5 fw-bold">¿Cual es la opcion correcta?</label>
+                        <label>¿Cual es la opcion correcta?</label>
                             <select class="form-select" aria-label="Default select example" id="datoOpcionCorecta">
                                 <option value="0"></option>
                                 <option value="1">A</option>
@@ -82,40 +87,35 @@
                     <button type="submit" class="btn-close" onclick="reset(formularioQuiz2)" data-bs-dismiss="modal" aria-label="Close" ></button>
                 </div>
                 <div class="modal-body">
-                    <form id="formularioQuiz2" class="row ">
+                    <form id="formularioEditarQuiz2" class="row ">
 
-                        <div class="col-12">
-                            <label for="exampleFormControlInput1" class="form-label fs-5 fw-bold">Pregunta</label>
-                            <input type="text" class="form-control w-75 border-0 border-bottom border-secondary border-5 mb-2" id="datoPreguntaEditar" placeholder="" required >
+                        <div class="col-12 ">
+                            <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Pregunta</label>
+                            <input type="text" class="form-control w-75 border-0 border-bottom border-secondary border-5 mb-5" id="datoPreguntaEditar" placeholder="" required >
                         </div>
                             
-                        <div class="col-12">
-                            <label for="exampleFormControlInput1" class="form-label fs-5 fw-bold">Opcion A</label>
-                            <input type="text" class="form-control w-75 border-0 border-bottom border-secondary border-5 mb-2" id="datoEditar1" placeholder="" required>
+                        <div class="col-12 ">
+                            <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold">Opcion A</label>
+                            <input type="text" class="form-control w-75 border-0 border-bottom border-secondary border-5 mb-5" id="datoEditar1" placeholder="" required>
                         </div>
                             
-                        <div class="col-12">
-                            <label for="exampleFormControlInput1" class="form-label fs-5 fw-bold justify-content-end">Opcion B</label>
-                            <input type="text" class="form-control w-75 border-0 border-bottom border-secondary border-5 mb-2" id="datoEditar2" placeholder="" required>
+                        <div class="col-12 ">
+                            <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold justify-content-end">Opcion B</label>
+                            <input type="text" class="form-control w-75 border-0 border-bottom border-secondary border-5 mb-5" id="datoEditar2" placeholder="" required>
                         </div>
 
-                        <div class="col-12">
-                            <label for="exampleFormControlInput1" class="form-label fs-5 fw-bold justify-content-end">Opcion C</label>
-                            <input type="text" class="form-control w-75 border-0 border-bottom border-secondary border-5 mb-2" id="datoEditar3" placeholder="" required>
+                        <div class="col-12 ">
+                            <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold justify-content-end">Opcion C</label>
+                            <input type="text" class="form-control w-75 border-0 border-bottom border-secondary border-5 mb-5" id="datoEditar3" placeholder="" required>
                         </div>
 
-                        <div class="col-12">
-                            <label for="exampleFormControlInput1" class="form-label fs-5 fw-bold justify-content-end">Opcion D</label>
-                            <input type="text" class="form-control w-75 border-0 border-bottom border-secondary border-5 mb-2" id="datoEditar4" placeholder="" required>
-                        </div>
-
-                        <div class="col-12 d-none">
-                            <label for="exampleFormControlInput1" class="form-label fs-5 fw-bold justify-content-end">Opcion D</label>
-                            <input type="number" class="form-control w-75 border-0 border-bottom border-secondary border-5 mb-2" id="datoOculto" placeholder="" required>
+                        <div class="col-12 ">
+                            <label for="exampleFormControlInput1" class="form-label fs-4 fw-bold justify-content-end">Opcion D</label>
+                            <input type="text" class="form-control w-75 border-0 border-bottom border-secondary border-5 mb-5" id="datoEditar4" placeholder="" required>
                         </div>
                             
-                        <div class="col-12">
-                        <label class="fs-5 fw-bold">¿Cual es la opcion correcta?</label>
+                        <div class="col-12 ">
+                        <label>¿Cual es la opcion correcta?</label>
                             <select class="form-select" aria-label="Default select example" id="datoOpcionCorectaEditar">
                                 <option value="0"></option>
                                 <option value="1">A</option>
@@ -125,7 +125,7 @@
                               </select>                        
                         </div>
                         <div id="botones" class="text-center col-12">
-                            <button class="fs-3 w-100 text-center bg-success text-white fw-bold rounded border border-4" id="btnConfirmarEditar" type="submit">Confirmar Edicion</button>
+                            <button class="fs-3 w-100 text-center bg-success text-white fw-bold rounded border border-4" id="btnConfirmarEditar" type="submit">Confirmar</button>
                         </div>
                     </form>
                 </div>
@@ -134,11 +134,39 @@
     </div>
 
 
-
-
-    <section class="" id="lugarPreguntas">
+    <div class="modal fade" id="quiz" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg rounded border border-info border-5">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Quiz</h1>
+                    <button type="submit" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+                </div>
+                <div class="modal-body">
+                    <section class="" id="lugarPreguntas">
         
-    </section>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="realizarQuiz" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg rounded border border-info border-5">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Quiz</h1>
+                    <button type="submit" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+                </div>
+                <div class="modal-body">
+                    <section class="" id="lugarQuiz">
+        
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
