@@ -2,6 +2,8 @@ function reset(formulario){
     formulario.reset()
 }
 const lugar = document.getElementById("listaClientes")
+const formularioeditar = document.getElementById("formularioEditarQuiz")
+const btnConfirmarEditar = document.getElementById("btnConfirmarEditar")
 
 
 
@@ -20,18 +22,18 @@ class crearlista {
         constructor() {
             this.lista = [];
 }
-addTask(task) {
+agregarPregunta(task) {
         this.lista.push(task);
 }
-removeTask(index) {
+eliminarPregunta(index) {
     this.lista.splice(index, 1);
 }
 
-cambiar(index,valor) {
+cambiarPregunta(index,valor) {
   this.lista[index]= valor;
 }
     
-getTasks() {
+verLista() {
         return this.lista;
 }}
 
@@ -65,7 +67,7 @@ getTasks() {
 
     else{
     const nuevaPregunta = new preguntas(pregunta,opcion1,opcion2,opcion3,opcion4,OpcionCorrecta);
-    lista.addTask(nuevaPregunta);
+    lista.agregarPregunta(nuevaPregunta);
     console.log(lista)
     enviarPregunta();
     formularioQuiz2.reset();
@@ -74,7 +76,7 @@ getTasks() {
   
   function enviarPregunta() {
     lugarPreguntas.innerHTML = "";
-    const pregunta = lista.getTasks();
+    const pregunta = lista.verLista();
     for (let i = 0; i < pregunta.length; i++) {
       const preguntas = pregunta[i];
       const listItem = document.createElement("li");
@@ -125,14 +127,14 @@ getTasks() {
 function btnDelete(button) {
   let confirmar = confirm("¿Estas seguro de eliminar estos Datos?")
   if (confirmar==true){
-    lista.removeTask(button);
+    lista.eliminarPregunta(button);
     enviarPregunta();
   }}
   
   
   function btnEditar(ids) {
 
-    const pregunta = lista.getTasks()
+    const pregunta = lista.verLista()
 
  
     document.getElementById("datoPreguntaEditar").value = pregunta[ids]["pregunta"];
@@ -141,8 +143,41 @@ function btnDelete(button) {
     document.getElementById("datoEditar3").value = pregunta[ids]["opcion3"];
     document.getElementById("datoEditar4").value = pregunta[ids]["opcion4"];
     document.getElementById("datoOpcionCorectaEditar").value =pregunta[ids]["OpcionCorrecta"];
+    document.getElementById("datoOculto").value = ids;
+
 
     $('#formularioEditarQuiz').modal('show')
   
   }
   
+  function Editar() {
+
+    formularioeditar.addEventListener("submit", function(event) {
+      event.preventDefault();
+ 
+    const pregunta = document.getElementById("datoPreguntaEditar").value;
+    const opcion1 = document.getElementById("datoEditar1").value ;
+    const opcion2 =document.getElementById("datoEditar2").value;
+    const opcion3 =document.getElementById("datoEditar3").value;
+    const opcion4 =document.getElementById("datoEditar4").value;
+    const OpcionCorrecta =document.getElementById("datoOpcionCorectaEditar").value;
+    const datoOculto =document.getElementById("datoOculto").value;
+
+
+
+    if (OpcionCorrecta == "0"){
+      alert("Elige una opcion Correcta")
+    }
+
+    else{
+      const editar = new preguntas(pregunta,opcion1,opcion2,opcion3,opcion4,OpcionCorrecta);
+
+      lista.cambiarPregunta(datoOculto,editar)
+      console.log(lista)
+      enviarPregunta()
+      $('#formularioEditarQuiz').modal('hide')
+    }
+  })}
+  
+
+  btnConfirmarEditar.addEventListener("submit",Editar())
