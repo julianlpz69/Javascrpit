@@ -224,7 +224,6 @@ function btnDelete(button) {
     else{
     const nuevaPregunta = new preguntas(pregunta,opcion1,opcion2,opcion3,opcion4,OpcionCorrecta);
     lista.addTask(nuevaPregunta);
-    console.log(lista)
     enviarPregunta();
     formularioEditarQuiz2.reset();
     }
@@ -235,6 +234,8 @@ function btnDelete(button) {
     const lista2 = lista.getTasks()
     const cantidad = lista2.length
 
+    let contador = 0
+
     for (let i = 0; i < cantidad; i++) {
 
       const input1 = document.getElementById(`input1${i}`)
@@ -242,26 +243,32 @@ function btnDelete(button) {
       const input3 = document.getElementById(`input3${i}`)
       const input4 = document.getElementById(`input4${i}`)
 
-      console.log(input1.checked)
-      console.log(input2.checked)
-      console.log(input3.checked)
-      console.log(input4.checked)
 
+      if (input1.checked && input1.value ==lista2[i].OpcionCorrecta) {
 
-      if (input1.checked) {
-        console.log("El radio 'Masculino' está seleccionado");
-      } else if (input2.checked) {
-        console.log("El radio 'Femenino' está seleccionado");
-      } else if (input3.checked) {
-        console.log("El radio 'Otro' está seleccionado");
+        contador++;
+      } 
+      
+      else if (input2.checked  && input2.value ==lista2[i].OpcionCorrecta) {
+
+        contador++;
+
+      } 
+      
+      else if (input3.checked  && input3.value ==lista2[i].OpcionCorrecta) {
+        contador++;
+
       } 
 
-      else if (input4.checked) {
-        console.log("El radio 'Otro' está seleccionado");
+      else if (input4.checked  && input4.value ==lista2[i].OpcionCorrecta) {
+        contador++;
+
       } 
     }
 
+    const lugarRespuesta = document.getElementById("lugarRespuesta");
+
+    lugarRespuesta.textContent=`su putaje fue de ${contador}/${cantidad}`
+
   }
   
-
-  btnConfirmarEditar.addEventListener("submit",Editar())
