@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="element">
+
+    </div>
+
+    <script>
+
+
+        let pato = "lucass"
+
+                            //clave - valor
+        localStorage.setItem("animal",pato) // guardar un texto en local storage
+
+        console.log(localStorage.getItem("animal")) // acceder a un valor por su clave en local storage
+
+        console.log("----------------------")
+
+
+
+        let lista = [{
+            name: "julian",
+            apellido : "lopez"
+            },
+            {
+            name: "julian2",
+            apellido : "lopez2"
+            }]
+
+
+            localStorage.setItem("list",JSON.stringify(lista)) //convertir un objeto a texto y agregarlo a localStorage
+            console.log(localStorage.getItem("list"))
+
+            let storega = localStorage.getItem("list")
+            console.log(typeof(storega))
+
+
+            console.log("----------------------")
+
+            let volverALista = JSON.parse(localStorage.getItem("list"))
+
+            console.log(volverALista)
+
+            console.log(typeof(volverALista))
+
+            console.log(volverALista[1])
+
+
+
+    </script>
+
+
+</body>
+</html>

@@ -22,15 +22,37 @@
         const [one, two, three, s] = numeros;
         console.log(one, two, three, s);
 
+
+        // EN OBJETOS LAS CLAVES TIENEN QUE SER EXACTAMENTE LA MISMA QUE EN EL OBJETO
+
         const persona = {
         nombre: "Jon",
         apellido: "MirCha",
-        edad: 35
+        edad: 35,
+       // tipo:"asdas"
         };
 
-        let { nombre, edad, apellido } = persona;
-        console.log(nombre, apellido, edad);
+                            //CAMBIAR NOMBRE DE LA CLAVE A LA NUEVA VARIABLE
+        let { nombre, edad, apellido:apellido22, tipo = "no sabemos" } = persona;  //No sabemos es un valor por defecto si no consigue ese valor en el objeto
+        console.log(nombre, apellido22, edad, tipo);
 
+
+
+
+
+        
+        const persona2 = {
+        nombres2: "Jon",
+        apellido2: "MirCha",
+        edad2: 35,
+       tipo2:"asdas"
+        };
+
+        const {nombre2, ...elResto} = persona2
+
+        console.log(nombre,elResto);
+
+        // Jon  Object {apellido2: "MirCha", edad2: 35, tipo2:"asdas"}
 
     </script>
 
