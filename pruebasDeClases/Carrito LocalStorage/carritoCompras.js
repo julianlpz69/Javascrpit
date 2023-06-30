@@ -65,6 +65,10 @@ else{
     mostrar()
 }}
 
+
+
+
+
 function mostrar() {
     lugarProductos.innerHTML = "";
 
