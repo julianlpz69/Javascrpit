@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    
+
+
+
+
+
+
+
+    <script>
+
+// setTimeout(() => {
+//       console.log("Ejecutando un setTimeout, esto se ejecuta una sóla vez1111111");
+//     }, 3000);
+
+
+
+
+
+//     setInterval(() => {
+//       console.log("Ejecutando un setInterval, esto se ejecuta indefinidaente cada cierto intervalo de tiempo222222222");
+//     }, 1000); 
+
+
+
+    // El srtTimeOut se guarda een una variable y con clearTimeout se cancela ese temporizador con la variable
+
+    // let temporizador1 = setTimeout(() => {
+    //   console.log(new Date().toLocaleTimeString());
+    // }, 1000);
+
+
+    // clearTimeout(temporizador1);
+    // console.log("después del clearTimeout333333333333"); 
+
+
+
+
+
+    // let temporizador = setInterval(() => {
+    //   console.log(new Date().toLocaleTimeString());
+    // }, 1000);
+
+    // clearInterval(temporizador);
+    // console.log("después del clearInterval444444444444"); 
+
+
+        // Cancelar un temporizador despues de un tiempo
+    let temporizador = setInterval(() => {
+        console.log("Dsafsad")
+    }, 1000);
+
+
+    setInterval(() => {
+        clearInterval(temporizador)
+    }, 10000);
+
+    </script>
+    
+
+
+</body>
+</html>

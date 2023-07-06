@@ -20,7 +20,7 @@ const fecthDAta = async (id) => {
         const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
         const data = await res.json()
         console.log(data)
-        imagen(data)
+        imagen(data,id)
     }
 
     catch (error) {
@@ -29,9 +29,15 @@ const fecthDAta = async (id) => {
 }
 
 
-const imagen = (pokemon) =>{
+const imagen = (pokemon,id) =>{
 
     console.log(pokemon)
+
+    const numero = document.getElementById('numero');
+    numero.textContent = id
+
+    const nombrePokemon = document.getElementById('nombrePokemon');
+    nombrePokemon.textContent = pokemon.name
 
 
     const imagen = document.getElementById('imagen');
