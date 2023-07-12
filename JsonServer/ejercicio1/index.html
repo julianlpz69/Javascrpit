@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous" defer></script>
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="./js/main.js" type="module"></script>
+    <title>Document</title>dataset
+</head>
+<body>
+    <div class="container container-fluid d-flex justify-content-center align-items-center mt-5 col-12 col-sm-12">
+        <div class="d-flex justify-content-center align-items-center col-12 col-sm-12 col-md-8 col-lg-6">
+            <div class=" col-12 bg-white p-4 rounded">
+                <form class="col-12" id="form">
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Nombre</label>
+                      <input type="text" class="form-control" id="nombre" name="nombre">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Edad</label>
+                      <input type="number" class="form-control" id="edad" name="edad">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Sexo</label>
+                        <select class="form-select" id="sexo" name="sexo">
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                          </select>
+                      </div>
+                    <input type="submit" class="btn btn-primary" data-accion="Registrar" value="Registrar">
+                  </form>
+               </div>
+        </div>
+    </div>
+
+    <div class="container container-fluid d-flex justify-content-center align-items-center mt-5">
+        <div class="d-flex justify-content-center align-items-center col-12 col-sm-12 col-md-8 col-lg-6">
+            <div class=" table-responsive  col-12 bg-white p-4 rounded">
+                <div class="d-flex justify-content-center">
+                    <input id="btnListar" type="submit" class="btn btn-primary" data-accion="Listar" value="Listar">
+                </div>
+                <table class="table border-bottom text-info mt-4" id="tablaClientes">
+                    <thead>
+                        <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>sexo</th>
+                        <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyPersonas"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="modalModificar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="col-12" id="formActualizar">
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Nombre</label>
+                      <input type="text" class="form-control" id="nombre" name="nombre">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Edad</label>
+                      <input type="number" class="form-control" id="edad" name="edad">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Sexo</label>
+                        <select class="form-select" id="sexo" name="sexo">
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                          </select>
+                      </div>
+                    <input type="submit" class="btn btn-primary" data-accion="Actualizar" value="Actualizar">
+                  </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+    </div>
+</body>
+</html>
