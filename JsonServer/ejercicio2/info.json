@@ -1,14 +1,10 @@
 {
   "persona": [
     {
-      "id": 1,
-      "nombre": "Julian"
-    },
-    {
-      "nombre": "1",
-      "edad": "2",
-      "sexo": "Femenino",
-      "id": 2
+      "nombre": "11",
+      "edad": "11",
+      "sexo": "Masculino",
+      "id": 1
     }
   ]
 }

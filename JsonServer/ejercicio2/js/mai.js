@@ -43,7 +43,7 @@ async function postPersonas(data,){
         body: JSON.stringify(data)
     }
 
-await fetch(`http://localhost:3000/persona`,config).json();
+await fetch(`http://localhost:3000/persona`,config);
 
 }
 
@@ -80,6 +80,7 @@ function mostrarPersona(data){
 
 async function getPersona(){
     let data = await (await fetch(`http://localhost:3000/persona`)).json();
+    
     mostrarPersona(data);
 }
 
@@ -87,11 +88,71 @@ async function getPersona(){
 
 btnListar.addEventListener('click', async (e) => {
     e.preventDefault();
-    let accion = e.target.dataset;
-    console.log(e.target.dataset)
-
         getPersona();
-    
 });
 
 getPersona()
+
+
+
+
+//-------------------------------------------------DELETE ----------------------------------------------------
+
+
+
+async function deletePersonas(tr,id){
+
+    let data = Object.fromEntries(new FormData(tr.target));
+
+    let config = {
+        method: 'DELETE',
+        headers: headers
+    };
+
+    let del = await(await fetch(`http://localhost:3000/persona/${id}`,config)).json();
+}
+
+
+async function ActualizarPersona(data,id) {
+
+    let config = {
+        method: 'PUT',
+        headers: headers,
+        body: JSON.stringify(data)
+    }
+
+    let act = await (await fetch(`http://localhost:3000/persona/${id}`,config)).json();
+}
+
+
+tbodyPersonas.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    let tr = e.target.closest("tr");
+    let id = tr.id;
+
+    let accion = e.target.dataset.accion;
+    
+    if(accion === "Eliminar"){
+        deletePersonas(tr,id);
+        tr.remove();
+    }
+    else if(accion === "Actualizar"){
+      formActualizar.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        let data = Object.fromEntries(new FormData(e.target));
+        console.log(data)
+
+        ActualizarPersona(data,id);
+      });
+    }
+});
+
+
+
+
+
+
+
+
