@@ -1,0 +1,34 @@
+{
+  "persona": [
+    {
+      "nombre": "12",
+      "edad": "233",
+      "sexo": "Masculino",
+      "id": 9
+    },
+    {
+      "nombre": "12",
+      "edad": "233",
+      "sexo": "Masculino",
+      "id": 10
+    },
+    {
+      "nombre": "12",
+      "edad": "233",
+      "sexo": "Masculino",
+      "id": 11
+    },
+    {
+      "nombre": "12",
+      "edad": "233",
+      "sexo": "Masculino",
+      "id": 12
+    },
+    {
+      "nombre": "12",
+      "edad": "123",
+      "sexo": "Femenino",
+      "id": 13
+    }
+  ]
+}

@@ -30,6 +30,7 @@ form.addEventListener('submit', (e) => {
 
 
     let data = Object.fromEntries(new FormData(e.target));
+    console.log(e.target)
     console.log(data)
     
     postPersonas(data)
