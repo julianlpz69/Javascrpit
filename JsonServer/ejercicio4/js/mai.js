@@ -1,9 +1,13 @@
-import {mostrarPersona} from "./mostrar.js"
+import {mostrarPersona,mostrarOpciones,mostrarPuntos} from "./mostrar.js"
 
 
 let formRuta = document.getElementById("formRuta");
+let formularioAgregarPunto = document.getElementById("formularioAgregarPunto");
+
 let formularioEditarRuta = document.getElementById("formularioEditarRuta");
 let tbodyRutas = document.getElementById("tbodyRutas");
+let btnPuntos = document.getElementById("btnPuntos");
+
 
 
 let btnEliminar = document.getElementById("btnEliminar");
@@ -23,6 +27,7 @@ formRuta.addEventListener('submit', (e) => {
     postPersonas(data)
     formRuta.reset()
     getPersona()
+
 
 });
 
@@ -45,19 +50,61 @@ async function postPersonas(data){
 
 
 
+
+
+
+    // --------------------------- Agregar Puntos -----------------------------------------
+
+
+    formularioAgregarPunto.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+
+  let data = Object.fromEntries(new FormData(e.target));
+  data.RutaId
+  postRuta(data)
+  formularioAgregarPunto.reset()
+  mostrarPuntos()
+
+
+});
+
+async function postRuta(data){
+
+  try{
+      let config = {
+          method: 'POST',
+          headers: headers,
+          body: JSON.stringify(data)
+      };
+      console.log(JSON.stringify(data))
+      await fetch(`http://localhost:3000/Puntos`,config)
+  }
+  
+  catch(err){
+      console.log(err)
+  }
+  }
+    
+
+
+
 // --------------------------- Mostrar Ruta -----------------------------------------
 
 
 async function getPersona(){
     let data = await (await fetch(`http://localhost:3000/Rutas`)).json();
     mostrarPersona(data);
+    mostrarOpciones(data)
 }
 getPersona()
 
 
 
+btnPuntos.addEventListener('click', (e) => {
+  mostrarPuntos()
 
-
+});
 
 
 

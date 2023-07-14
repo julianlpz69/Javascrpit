@@ -121,7 +121,64 @@
         </div>
 
 
+        <div class="modal fade" id="agregarPunto" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg rounded border border-info border-5">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Informacion De La Ruta</h1>
+                        <button type="submit" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formularioAgregarPunto" class="row ">
+    
+                            <div class="col-4">
+                                <label for="exampleFormControlInput1" class="fs-4 fw-bold mb-3">Nombre del Punto</label>
+                                <label for="exampleFormControlInput1" class="fs-4 fw-bold mb-3">link de imagen (Opcional)</label>
 
+                            </div>
+
+                                
+                            <div class="col-8 justify-content-start">
+                                <input type="text" class="w-75 border-5 mb-3" id="datoNombresBuscado" name="NomRuta" placeholder="" required>
+                                <input type="text" class="w-75 border-5 mb-3" id="datoNombresBuscado" name="NomRuta" placeholder="" required>
+
+                            </div>
+                            <div class="col justify-content-end text-center me-5 mt-3">
+                            <button type="submit" data-accion="Actualizar" class="btn btn-editar btn-success w-50 text-black fw-bold fs-4">Agregar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="" id="containerPutnos">
+            <div class="row">
+                <br><br><br>
+                <div class="col-4  mt-5 mx-5 text-center align-items-center justify-content-center " id="opciones">
+                    <br><br><br><br>
+                    <h2>Elige una Ruta para observar sus puntos</h2>
+    
+                    <select id="lugarOpcionesRutas" class="form-select w-100" id="alimentosLugar" aria-label="Default select example">
+                        <option value="nada" selected>Seleciona una Opcion</option>
+                      </select>
+                      <button type="button" id="btnPuntos" class="btn btn-warning fs-5 fw-bold mt-2">Confirmar</button>
+                </div>
+    
+    
+                <div class="col" >
+                    
+
+                    <div class="row" id="lugarPuntos">
+
+                    </div>
+                </div>
+            </div>
+        </div>
         
 
 

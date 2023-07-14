@@ -1,9 +1,26 @@
 {
   "Rutas": [
     {
-      "NomRuta": "holas",
-      "id": 1
+      "NomRuta": "Santander",
+      "id": 2
+    },
+    {
+      "NomRuta": "Barranca",
+      "id": 3
     }
   ],
-  "Puntos": []
+  "Puntos": [
+    {
+      "id": 3,
+      "NomPuntos": "Tunja",
+      "RutaId": 2,
+      "Imagen": "https://lugaresturisticos365.com/wp-content/uploads/mejores-lugares-turisticos-de-colombia.jpg"
+    },
+    {
+      "id": 4,
+      "NomPuntos": "Bucaramanga",
+      "RutaId": 2,
+      "Imagen": "https://lugaresturisticos365.com/wp-content/uploads/mejores-lugares-turisticos-de-colombia.jpg"
+    }
+  ]
 }
