@@ -2,6 +2,10 @@ import {mostrarPersona} from "./mostrar.js"
 
 
 let formRuta = document.getElementById("formRuta");
+let formularioEditarRuta = document.getElementById("formularioEditarRuta");
+let tbodyRutas = document.getElementById("tbodyRutas");
+
+
 let btnEliminar = document.getElementById("btnEliminar");
 const headers = new Headers ({'Content-Type': 'application/json'});
 
@@ -51,6 +55,70 @@ async function getPersona(){
 getPersona()
 
 
+
+
+
+
+
+
+
+
+
+
+
+// --------------------------- Editar Ruta -----------------------------------------
+
+async function ActualizarPersona(data,id) {
+
+
+
+  let config = {
+      method: 'PUT',
+      headers: headers,
+      body: JSON.stringify(data)
+  }
+
+  await (await fetch(`http://localhost:3000/Rutas/${id}`,config)).json();
+}
+
+
+tbodyRutas.addEventListener('click', async (e) => {
+
+  
+  let tr = e.target.closest("tr");
+  let id = tr.id;
+
+  console.log(id)
+
+  
+
+    if(e.target.dataset.accion == "Actualizar"){
+
+      formularioEditarRuta.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+       
+
+        let data = Object.fromEntries(new FormData(e.target));
+
+        console.log(data)
+        ActualizarPersona(data,id);
+      }
+    
+  
+  
+)}})
+
+ 
+
+
+
+
+
+
+
+
+
 // --------------------------- Eliminar Ruta -----------------------------------------
 
 async function deletePersonas(id){
@@ -80,8 +148,8 @@ document.addEventListener('click', async (e) => {
             text: "Despues de borrar esta ruta no podras recuperarla",
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonText: 'Yes, delete it!',
-            cancelButtonText: 'No, cancel!',
+            confirmButtonText: 'Yes, Eliminar!',
+            cancelButtonText: 'No, cancelar!',
             reverseButtons: true
           }).then((result) => {
             if (result.isConfirmed) {
@@ -91,20 +159,12 @@ document.addEventListener('click', async (e) => {
                     getPersona()
                     }, 1000);
               swalWithBootstrapButtons.fire(
-                'Deleted!',
-                'Your file has been deleted.',
-                'success'
+                'Eliminado!',
+                'Proceso realizado Correctamente',
+                'success',
               )
-            } else if (
-              /* Read more about handling dismissals below */
-              result.dismiss === Swal.DismissReason.cancel
-            ) {
-              swalWithBootstrapButtons.fire(
-                'Cancelled',
-                'Your imaginary file is safe :)',
-                'error'
-              )
-            }
+            } 
+            
           })
 
         

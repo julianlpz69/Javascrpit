@@ -18,8 +18,8 @@ export function mostrarPersona(data){
         <td class="text-center">${ruta.id}</td>
         <td class="text-center">${ruta.NomRuta}</td>
         <td class="text-center">
-            <button type="button" data-id="${ruta.id}" class="btn-eliminar bg-danger border-0 rounded bg-secondary px-2">Eliminar</button>
-            <button type="button" data-bs-toggle="modal" data-bs-target="#rutaEditar" class="btn-guardar bg-warning border-0 rounded bg-secondary px-2">Editar</button>
+            <button type="button" data-id="${ruta.id}" class="btn-eliminar bg-danger border-0 rounded bg-secondary px-2 w-25 fw-bold">Eliminar</button>
+            <button type="button" data-accion="Actualizar" data-bs-toggle="modal" data-bs-target="#rutaEditar" class="btn-guardar bg-warning border-0 rounded bg-secondary px-2 w-25 fw-bold">Editar</button>
         </td>
         `;
 

@@ -98,23 +98,21 @@
             <div class="modal-dialog modal-lg rounded border border-info border-5">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Informacion De La Ruta</h1>
-                        <button type="submit" class="btn-close" onclick="reset(formularioClienteBuscado2)" data-bs-dismiss="modal" aria-label="Close" ></button>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Informacion De La Ruta</h1>
+                        <button type="submit" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
                     </div>
                     <div class="modal-body">
-                        <form id="formularioClienteBuscado2" class="row ">
+                        <form id="formularioEditarRuta" class="row ">
     
-                            <div class="col-6">
-                                <label for="exampleFormControlInput1" class="fs-4 fw-bold mb-3">Número de identificación</label>
+                            <div class="col-4">
                                 <label for="exampleFormControlInput1" class="fs-4 fw-bold mb-3">Nombre de la Ruta</label>
                             </div>
                                 
-                            <div class="col-6 justify-content-start">
-                                <input type="number" class="w-75 border-5 mb-3" id="datoNombresBuscado" placeholder="" required>
-                                <input type="text" class="w-75 border-5 mb-3" id="datoNombresBuscado" placeholder="" required>
+                            <div class="col-8 justify-content-start">
+                                <input type="text" class="w-75 border-5 mb-3" id="datoNombresBuscado" name="NomRuta" placeholder="" required>
                             </div>
                             <div class="col justify-content-end text-center me-5 mt-3">
-                            <button class="btn btn-success w-50">Confirmar Edicion</button>
+                            <button type="submit" data-accion="Actualizar" class="btn btn-editar btn-success w-50 text-black fw-bold fs-4">Confirmar Edicion</button>
                             </div>
                         </form>
                     </div>
