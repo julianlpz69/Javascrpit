@@ -45,7 +45,10 @@ export function mostrarOpciones(data){
 }
 
 
+
 export async function mostrarPuntos(){
+
+    
 
     let lugarPuntos = document.getElementById("lugarPuntos");
     let ids = document.getElementById("lugarOpcionesRutas");
@@ -58,43 +61,47 @@ export async function mostrarPuntos(){
 
     if (ids.value == "nada"){
         alert("Seleciona una opcion Valida")
+        
     }
 
-    lugarPuntos.innerHTML = "";
+
+    else{
+        lugarPuntos.innerHTML = "";
 
 
 
-    lugarPuntos.innerHTML += `<h1 class="">${nombre.NomRuta}</h1>
+    lugarPuntos.innerHTML += `<h1 class="text">${nombre.NomRuta}</h1>
     <div>             
-    <button type="button" data-accion="" data-bs-toggle="modal" data-bs-target="#agregarPunto" class="btn-guardar w-25 bg-warning border-0 rounded bg-secondary fw-bold">Agregar Punto</button>
+    <button type="button" id="btnAgregarPunto" value="${nombre.id}" data-bs-toggle="modal" data-bs-target="#agregarPunto" class="btn-guardar w-25 bg-warning border-0 rounded bg-secondary fw-bold">Agregar Punto</button>
     </div>
     `
 
     data.forEach((ruta)=>{
 
+        
+
         if (ruta.RutaId == ids.value){
-            console.log(ruta.RutaId)
+    
 
 
         const lugarPuntos = document.getElementById('lugarPuntos');
 
         lugarPuntos.innerHTML +=`
         <div id="${ruta.id}" class="card m-3" style="width: 18rem;">
-        <img class="card-img-top" src="${ruta.Imagen}" alt="Card image cap">
+        <img class="card-img-top" src="${ruta.Imagen}" onerror="imagenDefecto(img${ruta.id})" id="img${ruta.id}" alt="Card image cap">
         <div class="card-body text-center">
           <h5 class="card-title mt-3">${ruta.NomPuntos}</h5>
           <br>
-           <button type="button" data-id="${ruta.id}" class="btn- bg-danger border-0 rounded bg-secondary  w-100 fw-bold mb-3">Eliminar</button>
+           <button type="button" onclick="eliminarPunto(${ruta.id})" class="btn bg-danger border-0 rounded bg-secondary  w-100 fw-bold mb-3">Eliminar</button>
         
-            <button type="button" data-accion="" data-bs-toggle="modal" data-bs-target="#rutaEditar" class="btn-guardar bg-warning border-0 rounded bg-secondary w-100 fw-bold">Editar</button>
+            <button type="button" onclick="actualizarPunto(${ruta.id})" class="btn bg-warning border-0 rounded bg-secondary w-100 fw-bold">Editar</button>
 
         </div>
       </div>`;
 
-;}
+    }
 
-        else{
-            console.log("no")
-        }
-    });
-}
+    
+;})};}
+
+

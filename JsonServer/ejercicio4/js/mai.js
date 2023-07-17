@@ -3,10 +3,13 @@ import {mostrarPersona,mostrarOpciones,mostrarPuntos} from "./mostrar.js"
 
 let formRuta = document.getElementById("formRuta");
 let formularioAgregarPunto = document.getElementById("formularioAgregarPunto");
-
 let formularioEditarRuta = document.getElementById("formularioEditarRuta");
+
+const btnAgregarPunto = document.getElementById("btnAgregarPunto");
 let tbodyRutas = document.getElementById("tbodyRutas");
 let btnPuntos = document.getElementById("btnPuntos");
+let formularioEditarPuntos = document.getElementById("formularioEditarPuntos");
+
 
 
 
@@ -16,6 +19,54 @@ const headers = new Headers ({'Content-Type': 'application/json'});
 
 
 
+
+async function deletePunto(id){
+
+  let config = {
+      method: 'DELETE',
+      headers: headers};
+
+await(await fetch(`http://localhost:3000/Puntos/${id}`,config)).json();
+}
+
+window.eliminarPunto = function async (e){
+
+
+
+
+      const swalWithBootstrapButtons = Swal.mixin({
+          customClass: {
+            confirmButton: 'btn btn-success',
+            cancelButton: 'btn btn-danger'
+          },
+          buttonsStyling: false
+        })
+        
+        swalWithBootstrapButtons.fire({
+          title: '¿Estas Seguro?',
+          text: "Despues de borrar esta ruta no podras recuperarla",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonText: 'Yes, Eliminar!',
+          cancelButtonText: 'No, cancelar!',
+          reverseButtons: true
+        }).then((result) => {
+          if (result.isConfirmed) {
+              setTimeout(() => {
+                  deletePunto(e);
+                  mostrarPuntos()
+                  }, 1000);
+            swalWithBootstrapButtons.fire(
+              'Eliminado!',
+              'Proceso realizado Correctamente',
+              'success',
+            )
+          } 
+          
+        })
+
+      
+  }
 // --------------------------- Agregar Ruta -----------------------------------------
 
 
@@ -56,12 +107,14 @@ async function postPersonas(data){
     // --------------------------- Agregar Puntos -----------------------------------------
 
 
-    formularioAgregarPunto.addEventListener('submit', (e) => {
+  formularioAgregarPunto.addEventListener('submit', (e) => {
   e.preventDefault();
 
+  const btnAgregarPunto = document.getElementById("btnAgregarPunto");
 
   let data = Object.fromEntries(new FormData(e.target));
-  data.RutaId
+  data.RutaId = btnAgregarPunto.value
+  console.log(data)
   postRuta(data)
   formularioAgregarPunto.reset()
   mostrarPuntos()
@@ -218,3 +271,48 @@ document.addEventListener('click', async (e) => {
     }})
 
 
+
+
+//--------------------------------------------Editar Puntos -------------------------------------------
+
+
+window.actualizarPunto = async function(id){
+
+let punto =  await (await fetch(`http://localhost:3000/Puntos/${id}`)).json()
+console.log(punto)
+
+const nombre = document.getElementById("nombrePuntoEditar")
+const link = document.getElementById("linkPuntoEditar")
+
+const id2 =punto.RutaId
+
+nombre.value = punto.NomPuntos
+link.value = punto.Imagen
+$('#editarPunto').modal('show')
+
+
+formularioEditarPuntos.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+
+  let data = Object.fromEntries(new FormData(e.target));
+  data.RutaId = id2
+  actualizarPuto(data,id)
+  $('#editarPunto').modal('hide')
+})
+
+
+}
+
+async function actualizarPuto(data,id) {
+
+
+
+  let config = {
+      method: 'PUT',
+      headers: headers,
+      body: JSON.stringify(data)
+  }
+
+  await (await fetch(`http://localhost:3000/Puntos/${id}`,config)).json();
+}

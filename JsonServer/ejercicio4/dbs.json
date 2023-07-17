@@ -1,0 +1,22 @@
+{
+  "Rutas": [
+    {
+      "id": 2,
+      "NomRuta": "Del Sol"
+    }
+  ],
+  "Puntos": [
+    {
+      "id": 3,
+      "NomPuntos": "Tunja",
+      "RutaId": 2,
+      "Imagen": "https://www.icesi.edu.co/blogs_estudiantes/miguelrenza/files/2021/11/Lugares-tur%C3%ADsticos-de-Colombia-para-visitar.jpg"
+    },
+    {
+      "id": 4,
+      "NomPuntos": "Bucaramanga",
+      "RutaId": 2,
+      "Imagen": "https://www.icesi.edu.co/blogs_estudiantes/miguelrenza/files/2021/11/Lugares-tur%C3%ADsticos-de-Colombia-para-visitar.jpg"
+    }
+  ]
+}

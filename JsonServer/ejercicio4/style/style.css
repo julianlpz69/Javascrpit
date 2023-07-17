@@ -1,0 +1,38 @@
+:root{
+    --body-color: white !important;
+    --sidebar-color: #FFF !important;
+    --primary-color: #232424 !important;
+    --primary-color-light: #f0f0f1 !important;
+    --toggle-color: #b4adad !important;
+    --text-color: #444343 !important;
+
+    --tran-03: all 0.2s ease !important;
+    --tran-03: all 0.3s ease !important;
+    --tran-04: all 0.3s ease !important;
+    --tran-05: all 0.3s ease !important;
+}
+
+
+body{ 
+    background-color: var(--body-color) !important;
+    transition: var(--tran-05) !important;
+}
+
+::selection{
+    background-color: var(--primary-color) !important;
+    color: #fff !important;
+}
+
+body.dark{
+    --body-color: #18191a !important;
+    --sidebar-color: #242526 !important;
+    --primary-color: #3a3b3c !important;
+    --primary-color-light: #3a3b3c !important;
+    --toggle-color: #fff !important;
+    --text-color: #ccc !important;
+}
+
+.text{
+        color: var(--text-color) !important;
+        transition: var(--tran-03) !important;
+}
